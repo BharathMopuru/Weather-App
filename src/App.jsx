@@ -5,11 +5,33 @@ function App() {
   const [data, setData] =  useState( {} );
   const [location, setLocation] = useState('');
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=dallas&appid=dc39337e88245a0f3f4fb330ecbe5ccf`;
-  
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=dc39337e88245a0f3f4fb330ecbe5ccf`;
+
+  const searchLocation = (event) => {
+    if (event.key === 'Enter'){
+      axios.get(url).then((res) => {
+        setData(res.data)
+        console.log(res.data)
+      })
+      setLocation("")
+    }
+  }
+
+  const handleChange = (event) => {
+    setLocation(event.target.value)
+  }
 
   return (
     <div className="app">
+      <div className="search">
+            <input  
+            onChange={handleChange}
+            onKeyDown={searchLocation}
+            placeholder="Enter Location"
+            type="text"
+            value={location}
+            />
+      </div>
        <div className="container">
         <div className="top">
           <div className="location">
