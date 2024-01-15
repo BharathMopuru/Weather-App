@@ -56,7 +56,7 @@ h1 {
   background: rgba(255, 255, 255, 0.1);
 }
 
-::placeholder{
+::placeholder {
   color: #f1f1f1;
 }
 
@@ -77,6 +77,10 @@ h1 {
   margin:  1rem auto;
 }
 
+.icon {
+  margin-left: 80%;
+}
+
 .app .description {
   position: relative;
   right: -90%;
@@ -94,3 +98,4 @@ h1 {
   border-radius: 12px;
   background-color: rgba(255, 255, 255, .2);
 }
+
